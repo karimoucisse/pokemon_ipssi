@@ -1,5 +1,6 @@
 import {
   Box,
+  Button,
   Card,
   CardContent,
   CircularProgress,
@@ -11,12 +12,12 @@ import PokemonCard from '../components/PokemonCard';
 import listOfPokemons from '../data/pokemon.json';
 import { useEffect, useState } from 'react';
 import SearchBar from '../components/SearchBar';
+import { Navigate, useNavigate } from 'react-router-dom';
 const PokemonList = () => {
   const [pokemonArray, setPokemonArray] = useState([]);
   const [value, setValue] = useState('');
-  // const [count, setCount] = useState(1);
   const [page, setPage] = useState(1);
-
+  const navigate = useNavigate();
   const handleChange = (e, value) => {
     setPage(value);
   };
@@ -61,7 +62,16 @@ const PokemonList = () => {
         gap: '60px',
       }}
     >
-      <SearchBar setValue={setValue} placeHolder="Trouve ton Pokemon ..." />
+      <Stack direction="row" spacing={6}>
+        <SearchBar setValue={setValue} placeHolder="Trouve ton Pokemon ..." />
+        <Button
+          onClick={() => navigate('/weathers')}
+          variant="contained"
+          sx={{ backgroundColor: '#1c2930', fontSize: '18px' }}
+        >
+          Page Meteo
+        </Button>
+      </Stack>
       <Box
         sx={{
           display: 'flex',
