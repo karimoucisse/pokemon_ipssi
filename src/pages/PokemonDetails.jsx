@@ -29,44 +29,51 @@ const PokemonDetails = () => {
         <Stack
           direction="row"
           sx={{
+            width: '100% !important',
             display: 'flex',
             position: 'absolute',
             top: '90px',
           }}
           spacing={'200px'}
         >
-          {pokemon.evolution.pre && (
-            <Box
-              display="flex"
-              sx={{
-                cursor: pokemon.evolution.pre ? 'pointer' : 'not-allowed',
-                gap: '15px',
-              }}
-              onClick={() => {
-                pokemon.evolution.pre &&
-                  navigate(`/pokemon/${pokemon.evolution.pre[0].pokedexId}`);
-              }}
-            >
-              <ArrowBackIosIcon />
-              <Typography>Evolution précedente</Typography>
-            </Box>
-          )}
-          {pokemon.evolution.next && (
-            <Box
-              display="flex"
-              sx={{
-                cursor: pokemon.evolution.next ? 'pointer' : 'not-allowed',
-                gap: '15px',
-              }}
-              onClick={() => {
-                pokemon.evolution.next &&
-                  navigate(`/pokemon/${pokemon.evolution.next[0].pokedexId}`);
-              }}
-            >
-              <Typography>Evolution suivante</Typography>
-              <ArrowForwardIosIcon />
-            </Box>
-          )}
+          <Box
+            display="flex"
+            flex={1}
+            sx={{
+              cursor: pokemon.evolution.pre ? 'pointer' : 'auto',
+              gap: '15px',
+            }}
+            onClick={() => {
+              pokemon.evolution.pre &&
+                navigate(`/pokemon/${pokemon.evolution.pre[0].pokedexId}`);
+            }}
+          >
+            {pokemon.evolution.pre && (
+              <>
+                <ArrowBackIosIcon />
+                <Typography>Evolution précedente</Typography>
+              </>
+            )}
+          </Box>
+          <Box
+            display="flex"
+            flex={1}
+            sx={{
+              cursor: pokemon.evolution.next ? 'pointer' : 'auto',
+              gap: '15px',
+            }}
+            onClick={() => {
+              pokemon.evolution.next &&
+                navigate(`/pokemon/${pokemon.evolution.next[0].pokedexId}`);
+            }}
+          >
+            {pokemon.evolution.next && (
+              <>
+                <Typography>Evolution suivante</Typography>
+                <ArrowForwardIosIcon />
+              </>
+            )}
+          </Box>
         </Stack>
         <Image src={pokemon.sprites.regular} />
       </Box>
