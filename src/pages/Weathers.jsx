@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { getWeatherDatas } from '../data/Weather';
 import SearchBar from '../components/SearchBar';
 import { Box, CircularProgress, Stack, Typography } from '@mui/material';
-import WeatherCard from '../components/WeatherCard';
+import WeatherCard from '../components/weather/WeatherCard';
 import SelectValue from '../components/SelectValue';
 import HouseIcon from '@mui/icons-material/House';
 import { useNavigate } from 'react-router-dom';

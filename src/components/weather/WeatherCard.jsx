@@ -39,17 +39,17 @@ const WeatherCard = ({ weather, unit }) => {
         </Stack>
         <Typography variant="h2">
           {weather.main.temp}
-          {unit !== 'celsius' ? ' F' : '°'}
+          {unit !== 'celsius' ? ' °F' : '°'}
         </Typography>
         <Stack mt={4} spacing={1}>
           {/* <Stack direction="row" spacing={2}> */}
           <Typography variant="body1">
             Temperature min: {weather.main.temp_min}
-            {unit !== 'celsius' ? ' F' : '°'}
+            {unit !== 'celsius' ? ' °F' : '°'}
           </Typography>
           <Typography variant="body1">
             Temperature max: {weather.main.temp_max}
-            {unit !== 'celsius' ? ' F' : '°'}
+            {unit !== 'celsius' ? ' °F' : '°'}
           </Typography>
           {/* </Stack> */}
           <Typography variant="body1">
