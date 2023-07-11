@@ -24,7 +24,6 @@ const Weathers = () => {
 
   const onSelectChange = (value) => {
     setSelectValue(value);
-    console.log('value: ', value);
   };
 
   return (

@@ -25,7 +25,6 @@ const PokemonList = () => {
   useEffect(() => {
     const firstIndex = (page - 1) * 8;
     setPokemonArray(listOfPokemons.slice(firstIndex, firstIndex + 8));
-    console.log(firstIndex);
   }, [page]);
 
   useEffect(() => {
