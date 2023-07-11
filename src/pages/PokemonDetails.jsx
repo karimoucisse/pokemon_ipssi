@@ -45,7 +45,12 @@ const PokemonDetails = () => {
             }}
             onClick={() => {
               pokemon.evolution.pre &&
-                navigate(`/pokemon/${pokemon.evolution.pre[0].pokedexId}`);
+                navigate(
+                  `/pokemon/${
+                    pokemon.evolution.pre[pokemon.evolution.pre.length - 1]
+                      .pokedexId
+                  }`,
+                );
             }}
           >
             {pokemon.evolution.pre && (
